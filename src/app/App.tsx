@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun, ChevronDown } from 'lucide-react';
+import imperialLogo from '../../assets/imperial-logo.jpeg';
+import samaLogo from '../../assets/sama-logo.jpeg';
 
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -40,7 +42,11 @@ export default function App() {
       }}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-12">
-            <img src="/src/imports/sama-logo.jpeg" alt="SAMA" className="h-12 object-contain" />
+            <img
+              src={samaLogo}
+              alt="SAMA"
+              className="h-12 object-contain"
+            />
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
                 <button
@@ -58,7 +64,11 @@ export default function App() {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <img src="/src/imports/imperial-logo.jpeg" alt="Imperial College London" className="h-10 object-contain" />
+            <img
+              src={imperialLogo}
+              alt="Imperial College London"
+              className="h-10 object-contain"
+            />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg transition-all duration-200 hover:scale-105"
