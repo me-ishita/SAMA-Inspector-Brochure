@@ -1,0 +1,194 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-bg: #f3efe8;
+  --color-surface: #f8f4ee;
+  --color-surface-2: #fcfaf6;
+  --color-surface-offset: #e8e0d5;
+  --color-border: rgba(44, 34, 24, 0.14);
+  --color-divider: #d7ccbe;
+  --color-text: #221b14;
+  --color-text-muted: #6a5f54;
+  --color-text-faint: #a49789;
+  --color-text-inverse: #fbf7f2;
+  --color-primary: #123c3a;
+  --color-primary-hover: #0e2f2d;
+  --color-primary-highlight: #e0d3bf;
+
+  --background: #f3efe8;
+  --foreground: #221b14;
+  --card: #f8f4ee;
+  --card-foreground: #221b14;
+  --popover: #fcfaf6;
+  --popover-foreground: #221b14;
+  --primary: #123c3a;
+  --primary-foreground: #fbf7f2;
+  --secondary: #e8e0d5;
+  --secondary-foreground: #221b14;
+  --muted: #e8e0d5;
+  --muted-foreground: #6a5f54;
+  --accent: #e0d3bf;
+  --accent-foreground: #221b14;
+  --destructive: #d4183d;
+  --destructive-foreground: #fbf7f2;
+  --border: rgba(44, 34, 24, 0.14);
+  --input: transparent;
+  --input-background: #fcfaf6;
+  --switch-background: #d7ccbe;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #a49789;
+  --radius: 0.75rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.dark {
+  --color-bg: #14110f;
+  --color-surface: #1b1714;
+  --color-surface-2: #231e1a;
+  --color-surface-offset: #2d2620;
+  --color-border: rgba(240, 231, 221, 0.12);
+  --color-divider: #3d342c;
+  --color-text: #ede4d8;
+  --color-text-muted: #c2b5a7;
+  --color-text-faint: #85786b;
+  --color-text-inverse: #171310;
+  --color-primary: #b59667;
+  --color-primary-hover: #d0ae79;
+  --color-primary-highlight: rgba(181, 150, 103, 0.14);
+
+  --background: #14110f;
+  --foreground: #ede4d8;
+  --card: #1b1714;
+  --card-foreground: #ede4d8;
+  --popover: #231e1a;
+  --popover-foreground: #ede4d8;
+  --primary: #b59667;
+  --primary-foreground: #171310;
+  --secondary: #2d2620;
+  --secondary-foreground: #ede4d8;
+  --muted: #2d2620;
+  --muted-foreground: #c2b5a7;
+  --accent: rgba(181, 150, 103, 0.14);
+  --accent-foreground: #ede4d8;
+  --destructive: #d4183d;
+  --destructive-foreground: #ede4d8;
+  --border: rgba(240, 231, 221, 0.12);
+  --input: rgba(240, 231, 221, 0.12);
+  --ring: #85786b;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 24px 56px rgba(0, 0, 0, 0.34);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
