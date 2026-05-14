@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun, ChevronDown } from 'lucide-react';
-import imperialLogo from '../assets/imperial-logo.jpeg';
-import samaLogo from '../assets/sama-logo.jpeg';
+import imperialLogo from '../assets/Imperial_logo.png';
+import samaLogo from '../assets/logo.svg';
 
 export default function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
